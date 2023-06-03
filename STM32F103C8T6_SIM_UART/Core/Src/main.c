@@ -65,7 +65,7 @@ void set_tx_pin(uint8_t v) {
 	}
 }
 
-struct Sim_Uart_Typedef su = {
+struct Emu_Uart_Typedef su = {
 	.set_tx = set_tx_pin,
 };
 
@@ -120,7 +120,7 @@ int main(void)
 
     /* USER CODE BEGIN 3 */
     const char hello[] = "hello world\r\n";
-    sim_uart_send(&su, (uint8_t *)hello, sizeof(hello));
+    Emu_uart_send(&su, (uint8_t *)hello, sizeof(hello));
     HAL_UART_Transmit(&huart1, (uint8_t *)hello, sizeof(hello), 1000);
     HAL_Delay(200);
   }
@@ -171,7 +171,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
 	if (htim->Instance == TIM4) {
 		// HAL_GPIO_TogglePin(LED_GPIO_Port, LED_Pin);
-		sim_uart_tim_callback(&su);
+		Emu_uart_tim_callback(&su);
 	}
 }
 /* USER CODE END 4 */

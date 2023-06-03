@@ -15,20 +15,18 @@
 #include <stdint.h>
 #include "main.h"
 
-enum Sim_Uart_Tx_State {
-	SU_TX_IDLE,
-	SU_TX_START,
-	SU_TX_DATA,
-	SU_TX_STOP,
+enum Emu_Uart_Tx_State {
+	EU_TX_IDLE,
+	EU_TX_START,
+	EU_TX_DATA,
+	EU_TX_STOP,
 };
 
-struct Sim_Uart_Typedef
+struct Emu_Uart_Typedef
 {
-	//GPIO_TypeDef *tx_port;
-	//uint16_t tx_pin;
 	void (*set_tx)(uint8_t pin_state);
 
-	enum Sim_Uart_Tx_State state;
+	enum Emu_Uart_Tx_State state;
 
 	uint8_t buff[256];
 	uint16_t byte_size;
@@ -36,8 +34,8 @@ struct Sim_Uart_Typedef
 	uint16_t bit_count;
 };
 
-void sim_uart_tim_callback(struct Sim_Uart_Typedef *uart);
+void Emu_uart_tim_callback(struct Emu_Uart_Typedef *uart);
 
-void sim_uart_send(struct Sim_Uart_Typedef *uart, uint8_t *buff, uint16_t size);
+void Emu_uart_send(struct Emu_Uart_Typedef *uart, uint8_t *buff, uint16_t size);
 
 #endif //__SIM_UART_H__
