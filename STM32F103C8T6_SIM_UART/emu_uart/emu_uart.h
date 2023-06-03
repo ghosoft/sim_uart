@@ -9,8 +9,8 @@
  * 
  */
 
-#ifndef __SIM_UART_H__
-#define __SIM_UART_H__
+#ifndef __EMU_UART_H__
+#define __EMU_UART_H__
 
 #include <stdint.h>
 #include "main.h"
@@ -38,4 +38,4 @@ void Emu_uart_tim_callback(struct Emu_Uart_Typedef *uart);
 
 void Emu_uart_send(struct Emu_Uart_Typedef *uart, uint8_t *buff, uint16_t size);
 
-#endif //__SIM_UART_H__
+#endif

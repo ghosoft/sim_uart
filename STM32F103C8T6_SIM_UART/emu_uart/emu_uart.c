@@ -9,7 +9,7 @@
  * 
  */
 
-#include "sim_uart.h"
+#include "emu_uart.h"
 
 #include <string.h>
 

@@ -37,7 +37,7 @@ BUILD_DIR = build
 # C sources
 C_SOURCES =  \
 Core/Src/main.c \
-sim_uart/sim_uart.c \
+emu_uart/emu_uart.c \
 Core/Src/gpio.c \
 Core/Src/tim.c \
 Core/Src/stm32f1xx_it.c \
@@ -115,7 +115,7 @@ AS_INCLUDES =
 # C includes
 C_INCLUDES =  \
 -ICore/Inc \
--ISim_uart\
+-IEmu_uart\
 -IDrivers/STM32F1xx_HAL_Driver/Inc \
 -IDrivers/STM32F1xx_HAL_Driver/Inc/Legacy \
 -IDrivers/CMSIS/Device/ST/STM32F1xx/Include \
